@@ -1,27 +1,40 @@
 input.onButtonPressed(Button.A, function () {
     SECONDE_TIMER = 0
 })
+input.onSound(DetectedSound.Loud, function () {
+    if (SECONDE_TIMER >= 60) {
+        SECONDE_TIMER = 0
+    }
+})
+let SECONDE = 0
+let MINUTE = 0
+let UUR = 0
+let posisie_van_tijd = 0
+let DEZE_HERHALING = 0
 let DELEN_door = 0
 let SECONDE_TIMER = 0
 led.enable(false)
 lcd1602.setAddress3()
 SECONDE_TIMER = 0
-let posisie_van_tijd = 0
 DELEN_door += 42
-let DEZE_HERHALING = 0
-let UUR = 0
-let MINUTE = 0
-let SECONDE = 0
+basic.forever(function () {
+    if (pins.digitalReadPin(DigitalPin.P9) == 1) {
+        SECONDE_TIMER = 0
+    }
+    if (pins.digitalReadPin(DigitalPin.P1) == 1) {
+        SECONDE_TIMER = 0
+    }
+    if (pins.digitalReadPin(DigitalPin.P4) != 1) {
+        control.reset()
+    }
+    if (pins.digitalReadPin(DigitalPin.P3) == 1) {
+        SECONDE_TIMER = 0
+    }
+})
 basic.forever(function () {
     if (DEZE_HERHALING > 4) {
         SECONDE_TIMER += 1
         basic.pause(1000)
-    }
-    if (pins.digitalReadPin(DigitalPin.P9) == 1) {
-        SECONDE_TIMER = 0
-    }
-    if (pins.digitalReadPin(DigitalPin.P3) == 1) {
-        SECONDE_TIMER = 0
     }
 })
 basic.forever(function () {
