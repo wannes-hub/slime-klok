@@ -20,6 +20,9 @@ basic.forever(function () {
     if (pins.digitalReadPin(DigitalPin.P9) == 1) {
         SECONDE_TIMER = 0
     }
+    if (pins.digitalReadPin(DigitalPin.P3) == 1) {
+        SECONDE_TIMER = 0
+    }
 })
 basic.forever(function () {
     if (DEZE_HERHALING <= 2) {

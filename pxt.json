@@ -8,7 +8,8 @@
         "datalogger": "*",
         "microbit-pxt-timeanddate": "github:bsiever/microbit-pxt-timeanddate#v2.0.33",
         "lcd1602": "github:xuefengedu/pxt-lcd1602_CN#0ecac824f43d544bf553459adb2696b5f0d3d8d2",
-        "power": "github:microbit-foundation/pxt-microbit-v2-power#v0.2.3"
+        "power": "github:microbit-foundation/pxt-microbit-v2-power#v0.2.3",
+        "SLIME klok": "github:wannes-hub/slime-klok#d841b06f370486f7b092b8a131ef1341ae50fce7"
     },
     "files": [
         "main.blocks",
